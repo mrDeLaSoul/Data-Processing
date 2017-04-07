@@ -25,27 +25,36 @@ def extract_tvseries(dom):
     - Runtime (only a number!)
     '''
 
-    #
+    # Initialize list that stores all tv-shows
     imdb = []
 
+    # Loop through tv-shows in the target url
     for tvshows in dom("div.lister-item-content")[:50]: # Top 50 IMDB tv-shows.
-        films = []
+
+        # Initialize list to store the film information
+        tv_shows = []
+
+        # Initialize list to store the lead actors/actresses
         stars = []
 
+        # Store lead actors/actresses in list
         for cast in tvshows("p a"):
             stars.append(cast.content.encode(encoding='UTF-8', errors='stricts'))
+        # Convert the elements in list stars to a single string and seperate with a comma
         strstars = ', '.join(stars)
 
-
-        films.extend(((tvshows("h3 a")[:1][0].content.encode(encoding='UTF-8', errors='stricts')),
-                    (tvshows("div.ratings-bar strong")[:1][0].content.encode(encoding='UTF-8', errors='stricts')),
-                    (tvshows("p span.genre")[:1][0].content.encode(encoding='UTF-8', errors='stricts').lstrip('\n').rstrip()),
+        # Add TV title, Rating, Genre, Lead Actor/Actresses, Runtime to the list tv_shows.
+        tv_shows.extend(((tvshows("h3 a").content.encode(encoding='UTF-8', errors='stricts')),
+                    (tvshows("div.ratings-bar strong").content.encode(encoding='UTF-8', errors='stricts')),
+                    (tvshows("p span.genre").content.encode(encoding='UTF-8', errors='stricts').lstrip('\n').rstrip()),
                     (strstars),
-                    (tvshows("span.runtime")[:1][0].content.encode(encoding='UTF-8', errors='stricts').rstrip(' min'))))
+                    (tvshows("span.runtime").content.encode(encoding='UTF-8', errors='stricts').rstrip(' min'))))
 
-        imdb.append(films)
+        # Store list containing tv-shows information in list imdb
+        imdb.append(tv_shows)
 
     return imdb
+
 
 def save_csv(f, tvseries):
     '''
@@ -53,9 +62,11 @@ def save_csv(f, tvseries):
     '''
     writer = csv.writer(f)
     writer.writerow(['Title', 'Rating', 'Genre', 'Actors', 'Runtime'])
+
+    # Loop through lists in tvseries and write the lists to the csv file
     for series in tvseries:
         writer.writerow(series)
-    # ADD SOME CODE OF YOURSELF HERE TO WRITE THE TV-SERIES TO DISK
+
 
 if __name__ == '__main__':
     # Download the HTML file
