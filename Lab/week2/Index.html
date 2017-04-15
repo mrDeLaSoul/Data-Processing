@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title> Average Temparature</title>
+	</head>
+	<body>
+		<textarea id="rawdata">
+20160412, 11.6
+20160413, 9
+20160414, 10.6
+20160415, 10.3
+20160416, 8.6
+20160417, 6.2
+20160418, 8.1
+20160419, 9.7
+20160420, 8.6
+20160421, 10.1
+20160422, 8.7
+20160423, 6.2
+20160424, 4.6
+20160425, 4.9
+20160426, 4.8
+20160427, 6
+20160428, 5.8
+20160429, 7.4
+20160430, 7.7
+20160501, 7.9
+20160502, 11.5
+20160503, 9.7
+20160504, 9.5
+20160505, 12.8
+20160506, 16.4
+20160507, 19.5
+20160508, 20.1
+20160509, 20.2
+20160510, 18.9
+20160511, 20.4
+20160512, 20.2
+20160513, 15.4
+20160514, 8.9
+20160515, 8.6
+20160516, 9.3
+20160517, 12.3
+20160518, 13.6
+20160519, 13.4
+20160520, 13.7
+20160521, 17.9
+20160522, 15.5
+20160523, 12
+20160524, 11.4
+20160525, 11.8
+20160526, 13.7
+20160527, 16
+20160528, 17.6
+20160529, 17.2
+20160530, 16.2
+20160531, 18.2
+20160601, 19.2
+20160602, 15.3
+20160603, 16.4
+20160604, 20.1
+20160605, 20
+20160606, 18.9
+20160607, 20.1
+20160608, 16.1
+20160609, 15.3
+20160610, 16.4
+20160611, 16.2
+20160612, 16.6
+20160613, 15.9
+20160614, 15.2
+20160615, 14.6
+20160616, 15.7
+20160617, 15.1
+20160618, 14.1
+20160619, 15.3
+20160620, 15.5
+20160621, 17
+20160622, 20.1
+20160623, 22
+20160624, 19.2
+20160625, 15.4
+20160626, 14.9
+20160627, 14.9
+20160628, 16.7
+20160629, 16
+20160630, 16.4
+20160701, 16.9
+20160702, 15.4
+20160703, 14.7
+20160704, 17
+20160705, 15.4
+20160706, 14.9
+20160707, 16.8
+20160708, 17.5
+20160709, 19.7
+20160710, 21.3
+20160711, 18.6
+20160712, 16.6
+20160713, 14.5
+20160714, 14.5
+20160715, 16.6
+20160716, 19.7
+20160717, 19.8
+20160718, 20.2
+20160719, 22.8
+20160720, 25.4
+20160721, 21.8
+20160722, 21.1
+20160723, 21.1
+20160724, 20.7
+20160725, 18.2
+20160726, 18.4
+20160727, 17.9
+20160728, 19
+20160729, 18.3
+20160730, 17.7
+20160731, 17
+20160801, 16.5
+20160802, 16.6
+20160803, 19
+20160804, 17.3
+20160805, 17.6
+20160806, 16.4
+20160807, 18.4
+20160808, 17.2
+20160809, 14.4
+20160810, 12.8
+20160811, 13.6
+20160812, 18.9
+20160813, 17.6
+20160814, 17
+20160815, 16.1
+20160816, 16.3
+20160817, 17.2
+20160818, 17.7
+20160819, 18.1
+20160820, 17.8
+20160821, 16.7
+20160822, 18
+20160823, 21
+20160824, 22.8
+20160825, 24.3
+20160826, 22.1
+20160827, 21.6
+20160828, 20.5
+20160829, 17.2
+20160830, 16.2
+20160831, 17.4
+20160901, 17.2
+20160902, 16.6
+20160903, 18.5
+20160904, 17.9
+20160905, 17.3
+20160906, 17.7
+20160907, 18.3
+20160908, 19.6
+20160909, 16.9
+20160910, 18.4
+20160911, 18.5
+20160912, 20.9
+20160913, 23.5
+20160914, 23
+20160915, 22.6
+20160916, 17.4
+20160917, 17.3
+20160918, 16.7
+20160919, 14.4
+20160920, 14.5
+20160921, 14.7
+20160922, 13.8
+20160923, 13.6
+20160924, 15.2
+20160925, 16.3
+20160926, 13.5
+20160927, 14.5
+20160928, 18.7
+20160929, 15.9
+20160930, 14.5
+20161001, 13.5
+20161002, 12.1
+20161003, 14.5
+20161004, 13
+20161005, 9.8
+20161006, 9.4
+20161007, 11.8
+20161008, 11
+20161009, 7.9
+20161010, 7.9
+20161011, 8
+20161012, 8.9
+20161013, 9.1
+20161014, 9.9
+20161015, 10.7
+20161016, 13.3
+20161017, 12.1
+20161018, 10.2
+20161019, 8.8
+20161020, 8.5
+20161021, 7.6
+20161022, 6.7
+20161023, 4.8
+20161024, 7.1
+20161025, 8.7
+20161026, 9.5
+20161027, 11.8
+20161028, 13.1
+20161029, 9.6
+20161030, 8.7
+20161031, 8.5
+20161101, 8.1
+20161102, 7.2
+20161103, 6.7
+20161104, 7.6
+20161105, 6.9
+20161106, 6.1
+20161107, 4.2
+20161108, 1.9
+20161109, 3
+20161110, 4
+20161111, 1.8
+20161112, 2
+20161113, 2.7
+20161114, 3.1
+20161115, 10.8
+20161116, 11.9
+20161117, 9.3
+20161118, 6
+20161119, 5.8
+20161120, 8.4
+20161121, 12
+20161122, 11
+20161123, 7.9
+20161124, 6.6
+20161125, 3.3
+20161126, -0.1
+20161127, 5.6
+20161128, -0.3
+20161129, -3.1
+20161130, 2
+20161201, 7.9
+20161202, 5.2
+20161203, -0.1
+20161204, -1.4
+20161205, -2.7
+20161206, 0.1
+20161207, 6.3
+20161208, 8.2
+20161209, 9.1
+20161210, 7.8
+20161211, 8.5
+20161212, 5.3
+20161213, 6.6
+20161214, 7.3
+20161215, 6.5
+20161216, 5.4
+20161217, 6.1
+20161218, 6.2
+20161219, 4.3
+20161220, -0.6
+20161221, 4.1
+20161222, 5.9
+20161223, 6
+20161224, 7.9
+20161225, 10.4
+20161226, 8.3
+20161227, 6.6
+20161228, 1
+20161229, -2.2
+20161230, -1.1
+20161231, 1.8
+20170101, 0.5
+20170102, 3
+20170103, 5
+20170104, 5.8
+20170105, 0
+20170106, -3
+20170107, -0.2
+20170108, 4.3
+20170109, 4.8
+20170110, 5.3
+20170111, 7.2
+20170112, 5.2
+20170113, 3.1
+20170114, 1.8
+20170115, 0.7
+20170116, -1.6
+20170117, -3.4
+20170118, -3.8
+20170119, -2
+20170120, -0.3
+20170121, -0.2
+20170122, -1.7
+20170123, 1.6
+20170124, 0.8
+20170125, -1.1
+20170126, -2.8
+20170127, 0.8
+20170128, 5.4
+20170129, 4.7
+20170130, 4.9
+20170131, 3.7
+20170201, 3.4
+20170202, 8.6
+20170203, 8.6
+20170204, 5.7
+20170205, 4.4
+20170206, 4.3
+20170207, 2.4
+20170208, 0
+20170209, -1.6
+20170210, -2.3
+20170211, -0.4
+20170212, 0.7
+20170213, 2.2
+20170214, 3.8
+20170215, 7.4
+20170216, 6.8
+20170217, 7
+20170218, 5.6
+20170219, 6.2
+20170220, 9.1
+20170221, 9.6
+20170222, 9.5
+20170223, 8
+20170224, 4.5
+20170225, 5.8
+20170226, 8.7
+20170227, 8.7
+20170228, 4.7
+20170301, 6.3
+20170302, 6.6
+20170303, 5.9
+20170304, 9.2
+20170305, 6.9
+20170306, 6
+20170307, 6.7
+20170308, 5.9
+20170309, 7.7
+20170310, 6.5
+20170311, 7.3
+20170312, 7.9
+20170313, 6.5
+20170314, 8.8
+20170315, 9
+20170316, 9.4
+20170317, 8.3
+20170318, 9.7
+20170319, 11.3
+20170320, 10.3
+20170321, 7.5
+20170322, 6.3
+20170323, 8.2
+20170324, 8.4
+20170325, 8.5
+20170326, 8
+20170327, 9.2
+20170328, 11.3
+20170329, 12.6
+20170330, 15.7
+20170331, 14.5
+20170401, 10.8
+20170402, 10.3
+20170403, 8.1
+20170404, 9.8
+20170405, 9.2
+20170406, 8.1
+20170407, 10.5
+20170408, 9.6
+20170409, 11.7
+20170410, 9.8
+20170411, 9.6</textarea>
+		<canvas id="mycanvas" width="1000" height="1000" style="position: absolute; z-index: 0"></canvas>
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script>
+
+		// Set graph-width and graph-heigth
+		graphwidth = [0, 600];
+		graphheigth = [0, 300];
+
+		// Initialize arrays
+		var datapoints = [];
+		var js_dates = [];
+		var dates = [];
+		var temps = [];
+
+		// Loads file
+        jQuery.get("file:///C:/Users/Laurens van der Ziel/Documents/GitHub/DataProcessing/Lab/week2/KNMI_20161231.txt", function(rawdata) {
+
+        	// Splits content by lines
+		    rawdata = rawdata.split("\n");
+
+		    function LoadingFormattingData(rawdata){
+
+				// Loops through objects in datapoints 
+				for (var object = 0; object < rawdata.length; object++) {
+
+					// Splits content in object into two chunks; date and average temperature
+					datapoint = rawdata[object].split(", ");
+
+					// Converts date string to javascript-dates and stores days and dates in lists
+					var year = datapoint[0].slice(0,4);
+					var month = datapoint[0].slice(4,6) - 1;
+					var date = datapoint[0].slice(6,8);
+					dates.push(date);
+					var js_date = new Date(year, month, date);
+					js_dates.push(js_date.toDateString());
+					datapoint[0] = js_date;
+
+					// Stores temperatures in list
+					temps.push(datapoint[1]);
+
+					// Check if max and min temperature needs to be updated
+					if (object == 0 || datapoint[1]*100 < mintemp){
+						mintemp = datapoint[1] * 100;
+					}
+					if (object == 0 || datapoint[1]*100 > maxtemp){
+						maxtemp = datapoint[1] * 100;
+					}
+
+					// Stores datapoints in list
+					datapoints.push(datapoint)
+				}
+			}LoadingFormattingData(rawdata)
+
+			function CreateTransform(x, dataminmax, graphminmax){
+
+				// Formulas to calculate alpha and beta
+				alpha = (graphminmax[1] - graphminmax[0]) / (dataminmax[1] - dataminmax[0])
+				beta = graphminmax[1] - alpha * dataminmax[1]
+
+				// Returns function for lineair transformation
+				return alpha * x + beta
+			}
+
+			function Screencoordinates(datapoints){
+
+				var graphpoints = [];
+
+				// Data bounds for dates and average temperature
+				dateminmax = [datapoints[0][0], datapoints[datapoints.length - 1][0]];
+				tempminmax = [mintemp / 100, maxtemp / 100];
+
+				// Loops through datapoints
+				for (var i = 0; i < datapoints.length; i++){
+
+					// Transforms datapoints to screencoordinates and stores screencoordinates in list
+					var coordinates = [];
+					xcoordinates = CreateTransform(datapoints[i][0], dateminmax, graphwidth);
+					coordinates.push(xcoordinates);
+					ycoordinates = CreateTransform(datapoints[i][1], tempminmax, graphheigth);
+					coordinates.push(ycoordinates)
+					graphpoints.push(coordinates);
+				}
+				return graphpoints
+			}
+
+			// Get an object of the CanvasRenderingContext2D interface
+			var canvas = document.getElementById('mycanvas');
+			var ctx = canvas.getContext('2d');
+
+			function axes(graphpoints) {
+
+		    	// Declares axes styles
+		    	var fontsize = 7 + (graphwidth[1] - graphwidth[0]) / 120;
+		    	ctx.font = fontsize+'px serif';
+		    	ctx.lineWidth = 2;
+		    	ctx.save();
+		    	ctx.translate(100, 50);
+		    	ctx.textAlign = 'right'
+
+		    	// Draws vertical line
+		    	// Draws n tick marks at the y-axis with the corresponding temperature.
+
+		    	ctx.moveTo(graphwidth[0] - 10, graphheigth[0]);
+		    	ctx.lineTo(graphwidth[0] - 10, graphheigth[1]);
+		    	var n__tick_marks_y = 9
+		    	for (var m = 0; m < n__tick_marks_y; m++) {
+		    		ctx.moveTo(graphwidth[0] - 10, graphheigth[0] + ((graphheigth[1] / (n__tick_marks_y - 1)) * m));
+		    		ctx.lineTo(graphwidth[0] - 15, graphheigth[0] + ((graphheigth[1] / (n__tick_marks_y - 1)) * m));
+		    		ctx.fillText((tempminmax[1] - ((tempminmax[1] - tempminmax[0]) / (n__tick_marks_y - 1)) * m).toFixed(2)
+		    					, graphwidth[0] - 18, graphheigth[0] + 3 + ((graphheigth[1] / (n__tick_marks_y - 1)) * m));
+		    	}
+
+		    	// Draws horizontal line
+		    	// Draws tick marks at the x-axis at every first day of the month with the corresponding dates
+		    	ctx.moveTo(graphwidth[0], graphheigth[1] + 10);
+		    	ctx.lineTo(graphwidth[1], graphheigth[1] + 10);
+		    	for (var l = 0; l < graphpoints.length; l++) {
+		    		ctx.moveTo(graphwidth[0] + ((graphwidth[1] / graphpoints.length) * l), graphheigth[1] + 10);
+		    		if (dates[l] == 1) {
+		    			ctx.lineTo(graphwidth[0] + ((graphwidth[1] / graphpoints.length) * l), graphheigth[1] + 15);
+		    			ctx.save();
+	    				ctx.translate(graphwidth[0] + ((graphwidth[1] / graphpoints.length) * l), graphheigth[1] + 22);
+	    				ctx.rotate(-Math.PI / 4);
+	    				ctx.fillText(js_dates[l], 0, 0)
+		    			ctx.restore();
+		    		}
+		    	}
+
+		    	// Sets the axis titles
+		    	ctx.restore();
+		    	ctx.font = fontsize * 2 +'px serif';
+		    	ctx.textAlign = 'center'
+		    	ctx.save();
+		    	ctx.translate(graphwidth[0] + 30, graphheigth[1] / 2 + 50);
+		    	ctx.rotate(-Math.PI / 2);
+		    	ctx.fillText('Average Temperatures', 0, 0)
+		    	ctx.restore();
+		    	ctx.fillText('Dates', graphwidth[1] / 2 + 100, graphheigth[1] + 160)
+		    	ctx.font = fontsize * 1.2 +'px serif';
+		    	ctx.fillText('Laurens van der Ziel,		Javascript, 	Bron: http://projects.knmi.nl/klimatologie/daggegevens/selectie.cgi', graphwidth[1] / 2 + 100, graphheigth[1] + 200)    	
+		    }
+
+			function graph(graphpoints) {
+
+				// Draws graph lines in area that is 100 points right and 50 down from the top left corner of the canvas
+				// y coordinates are drawn at graphheight - graphpoint since y == 0 at the top border of the canvas
+				ctx.save();
+				ctx.translate(100,50);
+		    	ctx.moveTo(graphpoints[0][0], graphheigth[1] - graphpoints[0][1]);
+		    	for (var k = 1; k < graphpoints.length; k++) {
+		    		ctx.lineTo(graphpoints[k][0], graphheigth[1] - graphpoints[k][1]);
+		    	}
+		    	ctx.stroke();
+		    	ctx.restore();
+			}
+
+			// Draw the axes and graph
+			axes(Screencoordinates(datapoints));
+			graph(Screencoordinates(datapoints));
+
+			// Obtains the canvas’s bounding box relative to the window
+			// Source: http://www.informit.com/articles/article.aspx?p=1903884&seqNum=6
+			function windowToCanvas(canvas, x, y) {
+			   var bbox = canvas.getBoundingClientRect();
+
+			   return { x: x - bbox.left * (canvas.width  / bbox.width),
+			            y: y - bbox.top  * (canvas.height / bbox.height)
+			          };
+			}
+
+			// Calculates the distance of the mouse to a point
+			// Source: http://stackoverflow.com/questions/16792841/detect-if-user-clicks-inside-a-circle
+			function pointInCircle(x, y, cx, cy, radius) {
+			  var distancesquared = (x - cx) * (x - cx) + (y - cy) * (y - cy);
+			  return distancesquared <= radius * radius;
+			}
+
+			// If the mouse is close to a graphpoint draw a circle and show the date and average temperature of that graphpoint
+			function drawcircle (graphpoints, x, y) {
+				for (var coor = 0; coor < graphpoints.length; coor++){
+
+					// Condition that checks if the mouse is close to a graphpoint
+					if (pointInCircle(graphpoints[coor][0] + 100, graphheigth[1] - graphpoints[coor][1] + 50, x, y, 7) == true){
+
+						// Draws a circle at the graphpoint
+						ctx.beginPath();
+				    	ctx.arc(graphpoints[coor][0] + 100, graphheigth[1] - graphpoints[coor][1] + 50, 5,0,2*Math.PI);
+						ctx.stroke();
+
+						// Displays the date and average temperature of the graphpoint
+						ctx.textAlign = 'left'
+						ctx.fillText('(' + (datapoints[coor][0]).toDateString() + ', ' + (datapoints[coor][1]) + ')', 110, 30);
+						break;
+			    	}
+				}
+			}
+
+			// Subtracts the left and top of the canvas’s bounding box from the x and y window coordinates, it also scales those coordinates when the canvas element’s size differs from the size of the drawing surface.
+			// Source: http://www.informit.com/articles/article.aspx?p=1903884&seqNum=6
+			mycanvas.onmousemove = function (e) {
+			   var loc = windowToCanvas(mycanvas, e.clientX, e.clientY);
+
+			   // Clears the graph
+			   ctx.save();
+			   ctx.fillStyle = 'white';
+			   ctx.fillRect(91, 0, 660, 358);
+			   ctx.restore();
+
+			   // Redraws graph and datapoint circle
+			   graph(Screencoordinates(datapoints));
+			   drawcircle(Screencoordinates(datapoints), loc.x, loc.y);
+			};
+
+		});
+
+	</script>
+</html>
