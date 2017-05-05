@@ -1,0 +1,10 @@
+Denmark 0.15
+Norway 0.17
+Finland 0.18
+Canada 0.19
+Netherlands 0.22
+Sweden 0.27
+Germany 0.32
+France 0.41
+United States 0.47
+United Kingdom 0.50
